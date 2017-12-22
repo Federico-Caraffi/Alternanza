@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<title>La pietra racconta</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<!-- favicon -->
+		<link rel="icon" href="">
+
+		<!-- eventuale link a Google font -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+		<!-- questi due che seguono non toccarli! -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<header>
+			<div id="titolo">
+				<h1>LA PIETRA RACCONTA</h1>
+			</div>	
+			<img src="img/palazzo3.jpg" id="i"></img>	
+			<div id="did">
+				<h1>Un palazzo da leggere</h2>
+				<h2>Dal 29 marzo al 21 maggio, palazzo ducale di Urbino</h3>
+			</div>
+			
+			
+		</header>
+		
+		<div id="content">
+			<p id="pres">La mostra offre ai visitatori la scoperta di un ricchissimo patrimonio di incisioni tracciate sulle mura del palazzo ducale. Attraverso i muri del palazzo ripercorreremo 600 anni di storia.</p>
+			
+			<div id="graffiti">
+				<table id="tabella">
+					<tr>
+						<td>
+							<p class="under">I graffiti sono in gran parte incisioni ma non solo: si varia dal carboncino alla biro.</p>
+							<div>
+								<img src="img/1.png" >
+							</div>
+							
+							<!--<p class="under">caso</p>-->
+						</td>
+						<td>
+							<div>
+								<img src="img/2.png" >
+							</div>
+							<p class="under">Oltre ai disegni sono presenti anche scritte di varie lingue: italiano, latino, francese, tedesco, spagnolo.</p>
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							<div>
+								<img src="img/3.png" ></img>
+							</div>
+							<p class="under">La mostra è un progetto di uno studente dell'università ISIA che ha voluto raccontare la storia del palazzo con l'aiuto dei graffiti presenti in esso.</p>
+						</td>
+						<td>
+							<div>
+								<img src="img/4.png" ></img>
+							</div>
+							<p class="under">Alla mostra sarà predisposto un virtual tour, che permetterà al visitatore di osservare le sale del palazzo rimanendo fermo.</p>
+						</td>
+					</tr>
+					
+					
+				</table>
+			</div>
+			<div class="mapouter"><div class="gmap_canvas">
+				<iframe width="100%" height="300px" id="gmap_canvas" src="https://maps.google.com/maps?q=Palazzo Ducale di Urbino, Urbino, PU, Italia, &t=&z=14&ie=UTF8&iwloc=&output=embed" frameborder="0"  marginheight="0" marginwidth="0"></iframe>
+				
+			</div>
+		
+		</div>
+		
+	<script>
+		var index=3;
+		var im=document.getElementById("i");
+		setInterval(cambia,3000);
+		function cambia(){
+			index++;
+			if (index>5){
+				index=3;
+			}
+			im.src="img/palazzo"+index+".jpg";
+		}
+		$("td").mouseenter(function(){
+			var t=this;		
+			$(t).find("div").fadeOut(function(){
+				$(t).find("p").show();
+			});
+			
+			
+		});
+		
+		$("td").mouseleave(function(){		
+			
+			var t=this;		
+			$(t).find("div").fadeIn();
+			$(t).find("p").hide();
+			
+			
+			
+		});
+	</script>	
+
+	</body>
+</html>
